@@ -25,38 +25,46 @@
 
     <div class="container">
         <div class="joke-card">
-            <h1>😂 Joke Generator</h1>
-            <p class="subtitle">Get Random Jokes Instantly in 140+ Languages</p>
+            <!-- Header Section -->
+            <div class="header-section">
+                <h1>😂 Joke Generator</h1>
+                <p class="subtitle">Get Random Jokes Instantly in 140+ Languages</p>
+                <div class="rating-section">
+                    <span class="rating">⭐ 4.8/5</span>
+                    <span class="users-count">📊 10K+ Users</span>
+                </div>
+            </div>
             
             <div class="joke-display">
                 <p id="jokeText" class="joke-text">Click the button to get a joke!</p>
             </div>
             
+            <!-- Controls Section -->
             <div class="controls-section">
                 <div class="category-selector">
-                    <label for="category">Select Category:</label>
+                    <label for="category">📚 Category:</label>
                     <select id="category">
-                        <option value="any">Any</option>
-                        <option value="programming">Programming</option>
-                        <option value="knock-knock">Knock-Knock</option>
-                        <option value="general">General</option>
-                        <option value="spooky">Spooky</option>
-                        <option value="dad">Dad Jokes</option>
-                        <option value="school">School</option>
-                        <option value="religious">Religious</option>
-                        <option value="christmas">Christmas</option>
-                        <option value="political">Political</option>
-                        <option value="sports">Sports</option>
-                        <option value="science">Science</option>
-                        <option value="travel">Travel</option>
-                        <option value="food">Food</option>
-                        <option value="animal">Animal</option>
-                        <option value="music">Music</option>
+                        <option value="any">Random</option>
+                        <option value="programming">👨‍💻 Programming</option>
+                        <option value="knock-knock">🚪 Knock-Knock</option>
+                        <option value="general">😄 General</option>
+                        <option value="spooky">👻 Spooky</option>
+                        <option value="dad">👨 Dad Jokes</option>
+                        <option value="school">🎓 School</option>
+                        <option value="religious">✝️ Religious</option>
+                        <option value="christmas">🎄 Christmas</option>
+                        <option value="political">🏛️ Political</option>
+                        <option value="sports">⚽ Sports</option>
+                        <option value="science">🧪 Science</option>
+                        <option value="travel">✈️ Travel</option>
+                        <option value="food">🍕 Food</option>
+                        <option value="animal">🐾 Animal</option>
+                        <option value="music">🎵 Music</option>
                     </select>
                 </div>
 
                 <div class="language-selector">
-                    <label for="language">Translate to:</label>
+                    <label for="language">🌐 Language:</label>
                     <select id="language">
                         <option value="english">English</option>
                         <option value="spanish">Spanish (Español)</option>
@@ -103,7 +111,6 @@
                         <option value="slovak">Slovak (Slovenčina)</option>
                         <option value="slovenian">Slovenian (Slovenščina)</option>
                         <option value="maltese">Maltese (Malti)</option>
-                        <option value="cypriot">Cypriot (Κυπριακά)</option>
                         <option value="georgian">Georgian (ქართული)</option>
                         <option value="armenian">Armenian (Հայերեն)</option>
                         <option value="azerbaijani">Azerbaijani (Azərbaycanca)</option>
@@ -117,7 +124,6 @@
                         <option value="myanmar">Myanmar (မြန်မာ)</option>
                         <option value="khmer">Khmer (ខ្មែរ)</option>
                         <option value="lao">Lao (ລາວ)</option>
-                        <option value="burmese">Burmese (ဗမာ)</option>
                         <option value="somali">Somali</option>
                         <option value="tigrinya">Tigrinya (ትግርኛ)</option>
                         <option value="amharic">Amharic (አማርኛ)</option>
@@ -155,23 +161,86 @@
                     </select>
                 </div>
             </div>
-            
-            <div class="button-group">
-                <button id="getJokeBtn" class="btn btn-primary">Get Joke</button>
-                <button id="translateBtn" class="btn btn-secondary" style="display:none;">Translate</button>
-                <button id="shareBtn" class="btn btn-secondary">Share</button>
-                <button id="copyBtn" class="btn btn-secondary">Copy</button>
+
+            <!-- Difficulty Level -->
+            <div class="difficulty-section">
+                <label for="difficulty">😊 Humor Level:</label>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn active" data-level="mild">😊 Mild</button>
+                    <button class="difficulty-btn" data-level="moderate">😄 Moderate</button>
+                    <button class="difficulty-btn" data-level="extreme">🤣 Extreme</button>
+                </div>
             </div>
             
+            <!-- Main Action Buttons -->
+            <div class="button-group">
+                <button id="getJokeBtn" class="btn btn-primary">⚡ Get Joke</button>
+                <button id="translateBtn" class="btn btn-secondary" style="display:none;">🌐 Translate</button>
+                <button id="shareBtn" class="btn btn-secondary">📤 Share</button>
+                <button id="copyBtn" class="btn btn-secondary">📋 Copy</button>
+            </div>
+
+            <!-- Advanced Options -->
+            <div class="advanced-options">
+                <button id="toggleAdvanced" class="toggle-btn">⚙️ Advanced Options</button>
+                <div id="advancedPanel" class="advanced-panel" style="display: none;">
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="includeExplicit"> Include Explicit Content
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="autoTranslate" checked> Auto-Translate
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="darkMode"> Dark Mode
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="soundEnabled" checked> Sound Effects
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loading Spinner -->
             <div id="loading" class="loading" style="display: none;">
                 <div class="spinner"></div>
-                <p>Loading joke...</p>
+                <p id="loadingText">Loading joke...</p>
             </div>
             
+            <!-- Notification -->
             <div id="notification" class="notification"></div>
             
-            <div class="joke-counter">
-                <p>Jokes fetched: <span id="jokeCount">0</span></p>
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">📈 Jokes Fetched:</span>
+                    <span class="stat-value" id="jokeCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">🔄 Session:</span>
+                    <span class="stat-value" id="sessionTime">00:00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">⭐ Favorites:</span>
+                    <span class="stat-value" id="favoriteCount">0</span>
+                </div>
+            </div>
+
+            <!-- Favorite Jokes List -->
+            <div class="favorites-section">
+                <button id="toggleFavorites" class="toggle-btn">❤️ Favorites</button>
+                <div id="favoritesList" class="favorites-list" style="display: none;"></div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer-section">
+                <p>Made with ❤️ | Version 2.0 | <a href="#" onclick="showAbout()">About</a> | <a href="#" onclick="showHelp()">Help</a></p>
             </div>
         </div>
     </div>
@@ -200,6 +269,40 @@
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+    </div>
+
+    <!-- Modal for About -->
+    <div id="aboutModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+            <h2>About Joke Generator</h2>
+            <p>🎉 <strong>Joke Generator v2.0</strong></p>
+            <p>Your one-stop destination for random jokes in 140+ languages!</p>
+            <ul>
+                <li>✨ 15+ Joke Categories</li>
+                <li>���� 140+ Language Support</li>
+                <li>🤖 Powered by Google Gemini AI</li>
+                <li>📱 Mobile Friendly</li>
+                <li>🚀 Fast & Reliable</li>
+            </ul>
+            <p><strong>Created by:</strong> Akshay Vijapure</p>
+        </div>
+    </div>
+
+    <!-- Modal for Help -->
+    <div id="helpModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('helpModal')">&times;</span>
+            <h2>How to Use</h2>
+            <ol>
+                <li>Select a joke category from the dropdown</li>
+                <li>Choose your preferred language</li>
+                <li>Click "Get Joke" to fetch a random joke</li>
+                <li>Use "Translate" to translate to your selected language</li>
+                <li>Share on social media or copy to clipboard</li>
+                <li>Add to favorites for later viewing</li>
+            </ol>
+        </div>
     </div>
 
     <script src="script.js"></script>
