@@ -9,7 +9,6 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -35,43 +34,9 @@ body.dark-mode .joke-display {
     background: linear-gradient(135deg, #444 0%, #333 100%);
 }
 
-/* Advertisement Styles */
-.ad-container {
-    width: 100%;
-    max-width: 728px;
-    margin: 20px auto;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ad-container.top-ad {
-    order: -2;
-}
-
-.ad-container.mid-ad {
-    order: 1;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.ad-container.bottom-ad {
-    order: 3;
-    margin-top: 30px;
-}
-
-.ad-container ins.adsbygoogle {
-    display: block;
-    min-height: 280px;
-}
-
 .container {
     width: 100%;
     max-width: 600px;
-    order: 0;
 }
 
 .joke-card {
@@ -114,19 +79,6 @@ h1 {
     font-size: 1.1em;
 }
 
-.rating-section {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 0.95em;
-    color: #888;
-}
-
-.rating,
-.users-count {
-    font-weight: 600;
-}
-
 /* Joke Display */
 .joke-display {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -162,22 +114,19 @@ h1 {
     margin: 25px 0;
 }
 
-.category-selector,
-.language-selector {
+.category-selector {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.category-selector label,
-.language-selector label {
+.category-selector label {
     font-weight: 600;
     color: #333;
     min-width: 120px;
 }
 
-.category-selector select,
-.language-selector select {
+.category-selector select {
     flex: 1;
     padding: 10px 15px;
     border: 2px solid #667eea;
@@ -188,75 +137,20 @@ h1 {
     background-color: white;
 }
 
-.category-selector select:hover,
-.language-selector select:hover {
+.category-selector select:hover {
     border-color: #764ba2;
     background-color: #f9f9f9;
 }
 
-.category-selector select:focus,
-.language-selector select:focus {
+.category-selector select:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-body.dark-mode .category-selector select,
-body.dark-mode .language-selector select {
+body.dark-mode .category-selector select {
     background-color: #444;
     color: #e0e0e0;
     border-color: #667eea;
-}
-
-/* Difficulty Section */
-.difficulty-section {
-    margin: 20px 0;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 10px;
-}
-
-.difficulty-section label {
-    font-weight: 600;
-    color: #333;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.difficulty-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.difficulty-btn {
-    flex: 1;
-    padding: 10px;
-    border: 2px solid #ddd;
-    background: white;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.difficulty-btn:hover {
-    border-color: #667eea;
-    background: #f0f0f0;
-}
-
-.difficulty-btn.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-color: #667eea;
-}
-
-body.dark-mode .difficulty-section {
-    background: #444;
-}
-
-body.dark-mode .difficulty-btn {
-    background: #333;
-    color: #e0e0e0;
-    border-color: #555;
 }
 
 /* Button Group */
@@ -458,7 +352,7 @@ body.dark-mode .advanced-panel {
 /* Stats Section */
 .stats-section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin: 25px 0;
     padding: 20px;
@@ -530,6 +424,7 @@ body.dark-mode .favorite-item {
     margin-bottom: 10px;
     font-size: 0.95em;
     line-height: 1.5;
+    word-break: break-word;
 }
 
 .favorite-actions {
@@ -657,7 +552,8 @@ body.dark-mode .modal-content h2 {
     line-height: 1.6;
 }
 
-.modal-content ul {
+.modal-content ul,
+.modal-content ol {
     margin-left: 20px;
 }
 
@@ -665,15 +561,6 @@ body.dark-mode .modal-content h2 {
 @media (max-width: 768px) {
     body {
         padding: 10px;
-    }
-
-    .ad-container {
-        max-width: 100%;
-        padding: 5px;
-    }
-
-    .ad-container ins.adsbygoogle {
-        min-height: 250px;
     }
 
     .joke-card {
@@ -692,19 +579,16 @@ body.dark-mode .modal-content h2 {
         gap: 12px;
     }
 
-    .category-selector,
-    .language-selector {
+    .category-selector {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .category-selector label,
-    .language-selector label {
+    .category-selector label {
         min-width: 100%;
     }
 
-    .category-selector select,
-    .language-selector select {
+    .category-selector select {
         width: 100%;
     }
 
@@ -714,10 +598,6 @@ body.dark-mode .modal-content h2 {
 
     .btn-primary {
         grid-column: auto;
-    }
-
-    .difficulty-buttons {
-        flex-direction: column;
     }
 
     .stats-section {
@@ -744,11 +624,6 @@ body.dark-mode .modal-content h2 {
         font-size: 0.95em;
     }
 
-    .rating-section {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .joke-display {
         padding: 20px;
         min-height: 80px;
@@ -765,10 +640,6 @@ body.dark-mode .modal-content h2 {
 
     .button-group {
         grid-template-columns: 1fr;
-    }
-
-    .ad-container ins.adsbygoogle {
-        min-height: 200px;
     }
 
     .modal-content {
